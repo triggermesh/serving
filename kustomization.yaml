@@ -1,0 +1,51 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+patches:
+- path: patch.yaml
+  target:
+    kind: Deployment
+resources:
+- config/100-namespace.yaml
+- config/200-clusterrole-certmanager.yaml
+- config/200-clusterrole-istio.yaml
+- config/200-clusterrole-metrics.yaml
+- config/200-clusterrole-namespaced.yaml
+- config/200-clusterrole.yaml
+- config/200-serviceaccount.yaml
+- config/201-clusterrolebinding-metrics-server.yaml
+- config/201-clusterrolebinding-metrics.yaml
+- config/201-clusterrolebinding.yaml
+- config/201-rolebinding-metrics-server.yaml
+- config/202-gateway.yaml
+- config/203-local-gateway.yaml
+- config/300-certificate.yaml
+- config/300-clusteringress.yaml
+- config/300-ingress.yaml
+- config/300-metric.yaml
+- config/300-pa.yaml
+- config/300-sks.yaml
+- config/400-activator-service.yaml
+- config/400-controller-service.yaml
+- config/400-webhook-service.yaml
+- config/999-cache.yaml
+- config/activator.yaml
+- config/autoscaler-hpa.yaml
+- config/autoscaler-service.yaml
+- config/autoscaler.yaml
+- config/config-autoscaler.yaml
+- config/config-certmanager.yaml
+- config/config-defaults.yaml
+- config/config-deployment.yaml
+- config/config-domain.yaml
+- config/config-gc.yaml
+- config/config-istio.yaml
+- config/config-logging.yaml
+- config/config-network.yaml
+- config/config-observability.yaml
+- config/config-tracing.yaml
+- config/controller.yaml
+- config/custom-metrics-apiservice.yaml
+- config/networking-certmanager.yaml
+- config/networking-istio.yaml
+- config/networking-ns-cert.yaml
+- config/webhook.yaml
